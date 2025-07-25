@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ganesh Car Rental Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #0d0d0d;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: linear-gradient(to right, #00BCD4, #1a1a1a);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo img {
+      width: 40px;
+      filter: invert(1);
+    }
+
+    .logo h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    nav a {
+      color: #fff;
+      margin-left: 1rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00BCD4;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: radial-gradient(circle at top, #00BCD4 0%, #0d0d0d 80%);
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .card {
+      background: #1a1a1a;
+      border-radius: 12px;
+      overflow: hidden;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(0, 188, 212, 0.4);
+      transition: transform 0.4s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: contain;
+      background: #000;
+    }
+
+    .card h4 {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      padding: 0.5rem;
+    }
+
+    .card button {
+      background: #00BCD4;
+      border: none;
+      color: #fff;
+      padding: 0.6rem 1.2rem;
+      margin-bottom: 1rem;
+      cursor: pointer;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    #booking, #contact {
+      padding: 2rem;
+      text-align: center;
+      animation: fadeInUp 1.5s ease;
+    }
+
+    form input, form select, form textarea {
+      width: 90%;
+      max-width: 400px;
+      margin: 0.5rem auto;
+      padding: 0.6rem;
+      border: none;
+      border-radius: 6px;
+    }
+
+    form button {
+      background: #00BCD4;
+      border: none;
+      color: #fff;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+    .map iframe {
+      width: 100%;
+      max-width: 600px;
+      height: 300px;
+      border: none;
+      margin-top: 1rem;
+    }
+
+    footer {
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .card-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="https://cdn-icons-png.flaticon.com/512/743/743007.png" alt="Car Icon">
+      <h1>Ganesh Car Rental Services</h1>
+    </div>
+    <nav>
+      <a href="#cars">Cars</a>
+      <a href="#booking">Book</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Reliable Rides at Your Service</h2>
+  </section>
+
+  <section id="cars">
+    <h3 style="text-align: center; margin-bottom: 1rem;">Available Cars</h3>
+    <div class="card-container">
+      <div class="card">
+        <img src="scorpio.webp" alt="Scorpio S3">
+        <h4>Scorpio S3</h4>
+        <p>Powerful SUV for long and rough rides.</p>
+        <button onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'});">Book Now</button>
+      </div>
+      <div class="card">
+        <img src="swift.jpeg" alt="Maruti Swift">
+        <h4>Maruti Swift</h4>
+        <p>Comfortable and fuel-efficient for city travel.</p>
+        <button onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'});">Book Now</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="booking">
+    <h3>Book Your Ride</h3>
+    <form>
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <select required>
+        <option value="">Select Car</option>
+        <option value="Scorpio S3">Scorpio S3</option>
+        <option value="Maruti Swift">Maruti Swift</option>
+      </select>
+      <input type="date" required>
+      <input type="date" required>
+      <textarea placeholder="Additional Info"></textarea>
+      <button type="submit">Confirm Booking</button>
+    </form>
+  </section>
+
+  <section id="contact">
+    <h3>Contact Us</h3>
+    <p style="text-align: center;">📞 +91-7773925087<br>📧 ganeshsonbarse22@gmail.com<br>📍 Deori, Gondia, Maharashtra</p>
+    <div class="map">
+      <iframe src="https://www.google.com/maps?q=Deori+Gondia+Maharashtra&output=embed"></iframe>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Ganesh Car Rental Services. All rights reserved.
+  </footer>
+</body>
+
+</html>
